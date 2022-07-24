@@ -26,7 +26,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          keys: [backend-build]
+          keys: [backend-build-new]
       - run:
           name: Back-end build
           command: |
@@ -37,7 +37,7 @@ jobs:
 
       - save_cache:
           paths: [backend/node_modules]
-          key: backend-build
+          key: backend-build-new
 
   test-frontend:
     docker:
@@ -60,7 +60,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          keys: [backend-build]
+          keys: [backend-build-new]
       - run:
           name: Back-end test
           command: |
@@ -91,7 +91,8 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - checkout
-
+      - restore_cache:
+          keys: [backend-build-new]
       - run:
           name: Back-end scan
           command: |
