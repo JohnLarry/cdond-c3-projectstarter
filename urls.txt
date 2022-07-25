@@ -1,0 +1,4 @@
+Project git repository:
+https://github.com/JohnLarry/cdond-c3-projectstarter
+
+bucket endpoint: http://udapeople-c32d3bd.s3-website-us-east-1.amazonaws.com/#/employees
